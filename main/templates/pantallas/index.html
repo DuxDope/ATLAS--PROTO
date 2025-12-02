@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención Farmacia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column align-items-center min-vh-100">
+        <div class="card-container">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="container">
+                <div class="log-card">
+                    <p class="heading">¡Bienvenido!</p>
+                    <p>Identificación del Paciente</p>
+                    
+                    <form id="form-identificacion" action="{% url 'pantalla2' %}" method="post" onsubmit="return validateAndContinue(event);">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <p class="text">Rut</p>
+                            <input class="input" type="text" id="rut" name="rut" placeholder="ej: 15008741-2">
+                            <p class="text">Nombre para ser Llamado</p>
+                            <input class="input" type="text" id="name" name="name" placeholder="ej: Jose Alberto">
+                        </div>
+                        <button type="submit" class="btn">Continuar</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="fondo-azul" class="fondo-azul d-flex flex-column justify-content-center align-items-center w-100 fixed-bottom">
+            <div class="contenido-fondo-azul text-center d-flex align-items-center mb-3">
+                <h1>ATLAS XD</h1>
+            </div>
+            <div class="contenido-fondo-azul text-center d-flex align-items-center mb-1" style="font-size: 0.75rem;">
+                <img src="{% static 'assets/gmail.png' %}" alt="Correo Electrónico" class="me-2" style="width: 20px; height: 20px;">
+                <p class="mb-0">contacto@atlas.cl</p>
+            </div>
+            <div class="contenido-fondo-azul text-center d-flex align-items-center" style="font-size: 0.75rem;">
+                <img src="{% static 'assets/wsp.png' %}" alt="WhatsApp" class="me-2" style="width: 20px; height: 20px;">
+                <p class="mb-0">+5691111111</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

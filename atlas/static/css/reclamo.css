@@ -1,0 +1,27 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* ATLAS AZUL */
+
+#fondo-azul {
+    height: 100%;
+}
+
+#fondo-azul {
+    margin-top: 5%;
+    background-color: blue;
+    color: white;
+    height: 30vh;
+    border-top-left-radius: 100% 20vh; 
+    border-top-right-radius: 100% 20vh;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#contenido-fondo-azul {
+    margin-bottom: 5%; 
+}
+
+footer {
+    background-color: #f8f9fa;
+}
